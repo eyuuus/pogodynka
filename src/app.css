@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Orbitron&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	box-sizing: inherit;
+	color: black;
+	font-family: roboto;
+}
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+body {
+	background-color: #ebebeb;
+}

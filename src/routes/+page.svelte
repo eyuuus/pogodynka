@@ -1,47 +1,15 @@
 <script>
 	export let data;
 	console.log(data);
-	const kToc = (temp) => {
-		return Math.round((temp = temp - 273.1));
-	};
+
+	import search from '$lib/images/search-line-icon.svg';
 </script>
 
-<main>
-	<div id="banner">
-		<div id="search">
-			<form action="search">
-				<div id="icon"></div>
-				<input type="text" name="city" id="city" placeholder="Search your city" />
-			</form>
+<main class="bg-[url('$lib/images/banner.jpg')] bg-cover h-[65vh] flex justify-center w-full">
+	<form action="/search" method="get" class="flex h-16 w-1/4 mt-[15vh]">
+		<div class="bdl-px bg-white flex items-center justify-center w-[20%]">
+			<img src={search} alt="" class="h-2/3 w-2/3 border-r pr-2" />
 		</div>
-	</div>
+		<input type="search" name="city" placeholder="Search your city" class="outline-none w-[80%]" />
+	</form>
 </main>
-
-<style>
-	#banner {
-		width: 100%;
-		height: 78vh;
-		background-image: url($lib/images/banner.jpg);
-		background-size: cover;
-		background-repeat: no-repeat;
-		display: flex;
-		justify-content: center;
-	}
-	#search {
-		width: 30%;
-		height: 3rem;
-	}
-	input {
-		width: 85%;
-		height: 100%;
-	}
-	#icon {
-		width: 15%;
-		height: 100%;
-	}
-	form {
-		height: 100%;
-		display: flex;
-		width: 100%;
-	}
-</style>

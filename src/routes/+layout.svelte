@@ -1,26 +1,14 @@
-<nav>
-	<div id="logo">
-		<img src="favicon.png" alt="" />Weather
-	</div>
+<script>
+	import '../app.css';
+</script>
+
+<nav class="h-16 w-full bg-[#1f1f1f]">
+	<a href="/">
+		<div class="h-full flex items-center ml-8">
+			<img src="favicon.png" alt="" class="h-4/6 w-auto" /><span
+				class="text-white text-2xl font-bold">Weather</span
+			>
+		</div>
+	</a>
 </nav>
 <slot />
-
-<style>
-	nav {
-		background-color: #1f1f1f;
-		width: 100%;
-		height: 9%;
-		display: flex;
-		align-items: center;
-	}
-	#logo {
-		margin-left: 3rem;
-		font-weight: 700;
-		font-size: 1.5rem;
-		color: white;
-	}
-	img {
-		height: 2rem;
-		width: 2rem;
-	}
-</style>
