@@ -13,7 +13,7 @@
 		<p>{date.getHours() + ':' + date.getMinutes()}</p>
 		<div class="flex w-3/4 m-auto mt-4">
 			<div class="text-6xl">
-				&deg;<span class="text-3xl">C</span>
+				{kToc(data.weatherData.current.temp)}&deg;<span class="text-3xl">C</span>
 			</div>
 			<div>
 				<div></div>
