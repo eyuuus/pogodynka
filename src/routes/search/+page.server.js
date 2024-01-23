@@ -15,7 +15,7 @@ export const load = async (event) => {
 			geocodeData = await geocodeRes.json();
 			lat = geocodeData[0].lat;
 			lon = geocodeData[0].lon;
-			console.log(geocodeData[0].lon);
+
 			const currentUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=d7fd7a2eed9b4078c2476bb88c6cba7f`;
 			const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=d7fd7a2eed9b4078c2476bb88c6cba7f`;
 			try {

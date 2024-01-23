@@ -1,7 +1,4 @@
 <script>
-	export let data;
-	console.log(data);
-
 	import search from '$lib/images/search-line-icon.svg';
 </script>
 
