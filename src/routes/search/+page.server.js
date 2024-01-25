@@ -25,8 +25,11 @@ export const load = async (event) => {
 				if (currentRes.ok && forecastRes.ok) {
 					const weatherData = await currentRes.json();
 					const forecast = await forecastRes.json();
+					let imgBaseUrl = 'https://openweathermap.org/img/wn/10d@4x.png';
+					let imgCurrentUrl = '';
+					imgCurrentUrl = imgBaseUrl.replace('10d', weatherData.current.weather[0].icon);
 
-					return { weatherData, forecast, error: '' };
+					return { weatherData, forecast, imgCurrentUrl, error: '' };
 				} else if (currentRes.status === 404) {
 					return {
 						error: `The location '${city}' could not be found`
