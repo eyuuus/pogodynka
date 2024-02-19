@@ -28,8 +28,13 @@ export const load = async (event) => {
 					let imgBaseUrl = 'https://openweathermap.org/img/wn/10d@4x.png';
 					let imgCurrentUrl = '';
 					imgCurrentUrl = imgBaseUrl.replace('10d', weatherData.current.weather[0].icon);
+					weatherData.daily.pop();
+					weatherData.daily.forEach((element) => {
+						element.weather[0].imgUrl = imgBaseUrl.replace('10d', element.weather[0].icon);
+					});
+					let dailyForecast = weatherData.daily;
 
-					return { weatherData, forecast, imgCurrentUrl, error: '' };
+					return { weatherData, forecast, imgCurrentUrl, dailyForecast, error: '' };
 				} else if (currentRes.status === 404) {
 					return {
 						error: `The location '${city}' could not be found`
