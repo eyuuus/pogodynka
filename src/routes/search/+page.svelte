@@ -64,4 +64,18 @@
 			{/each}
 		</div>
 	</Card>
+	<Card>
+		<div class="flex justify-around w-full">
+			{#each data.hourly as hour}
+				<div class="border-r flex flex-col items-center">
+					<div class="font-heavy">{convertUnixdate(hour.dt).getHours()}</div>
+					<div class="w-full text-center">
+						{kToc(hour.temp)}&deg;<span class="text-md">C</span>
+					</div>
+					<img src={hour.weather[0].imgUrl} alt="" />
+					<div>{Math.round(hour.pop * 100)}% <img class="w-4 inline" src={rainIcon} alt="" /></div>
+				</div>
+			{/each}
+		</div>
+	</Card>
 </main>

@@ -32,9 +32,10 @@ export const load = async (event) => {
 					weatherData.daily.forEach((element) => {
 						element.weather[0].imgUrl = imgBaseUrl.replace('10d', element.weather[0].icon);
 					});
+					let hourly = weatherData.hourly.slice(0, 12);
 					let dailyForecast = weatherData.daily;
 
-					return { weatherData, forecast, imgCurrentUrl, dailyForecast, error: '' };
+					return { weatherData, forecast, imgCurrentUrl, dailyForecast, hourly, error: '' };
 				} else if (currentRes.status === 404) {
 					return {
 						error: `The location '${city}' could not be found`
