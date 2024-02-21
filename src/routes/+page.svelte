@@ -1,5 +1,7 @@
 <script>
 	import search from '$lib/images/search-line-icon.svg';
+	export let data;
+	console.log(data);
 </script>
 
 <main class="bg-[url('$lib/images/banner.jpg')] bg-cover h-[65vh] flex justify-center w-full">
@@ -9,4 +11,9 @@
 		</div>
 		<input type="search" name="city" placeholder="Search your city" class="outline-none w-[80%]" />
 	</form>
+	<div class="flex justify-around w-1/2 h-1/3">
+		<!-- {#each data as city}
+			<div class="backdrop:blur-sm h-full w-1/4 bg-gray-800">{city.temp.main}</div>
+		{/each} -->
+	</div>
 </main>

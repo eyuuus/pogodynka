@@ -44,20 +44,23 @@
 				<img src={data.imgCurrentUrl} class="inline w-1/2" alt="" />
 				{kToc(data.weatherData.current.temp)}&deg;<span class="text-2xl text-gray-500">C</span>
 			</div>
-			<div class="flex flex-col justify-around divide-y w-[55%]">
-				<div class="flex justify-between h-1/3">
+			<div class="flex flex-col justify-around divide-y w-[55%] text-lg">
+				<div class="flex justify-between h-1/3 items-center">
 					<div>Wind Speed</div>
 					<div class="font-bold">
 						{Math.round(data.weatherData.current.wind_speed * 3.6)}km/h
 					</div>
 				</div>
-				<div class="flex justify-between h-1/3">
+				<div class="flex justify-between h-1/3 items-center">
 					<div>Wind Gusts</div>
 					<div class="font-bold">
 						{Math.round(data.weatherData.current.wind_gust * 3.6)}km/h
 					</div>
 				</div>
-				<div class="flex justify-between h-1/3">{data.weatherData.current.uvi}</div>
+				<div class="flex justify-between h-1/3 items-center">
+					<div>UV</div>
+					<div class="font-bold">{data.weatherData.current.uvi}</div>
+				</div>
 			</div>
 		</div>
 	</Card>
@@ -65,7 +68,7 @@
 		<div class="flex justify-around w-full divide-x">
 			{#each data.dailyForecast as day}
 				<div class=" flex flex-col items-center">
-					<div>{numToDay(convertUnixdate(day.dt).getDay())}</div>
+					<div class="font-bold">{numToDay(convertUnixdate(day.dt).getDay())}</div>
 					<div class="w-full text-center">
 						{kToc(day.temp.day)}&deg;<span class="text-md">C</span>
 					</div>
